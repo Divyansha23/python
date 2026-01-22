@@ -4,10 +4,10 @@ def multiply_multiple(*args):
     """Multiply multiple numbers together.
     
     Args:
-        *args: Variable number of arguments to multiply
+        *args: Variable number of numeric arguments
         
     Returns:
-        The product of all numbers
+        The product of all arguments
         
     Example:
         >>> multiply_multiple(2, 3, 4)
@@ -15,7 +15,6 @@ def multiply_multiple(*args):
     """
     if not args:
         return 0
-    
     result = 1
     for num in args:
         result *= num
@@ -36,7 +35,6 @@ def multiply_list(numbers):
     """
     if not numbers:
         return 0
-    
     result = 1
     for num in numbers:
         result *= num
@@ -78,7 +76,6 @@ def factorial(n):
         raise ValueError("Factorial is not defined for negative numbers")
     if n == 0 or n == 1:
         return 1
-    
     result = 1
     for i in range(2, n + 1):
         result *= i
@@ -89,7 +86,7 @@ def multiply_matrix_scalar(matrix, scalar):
     
     Args:
         matrix: 2D list representing a matrix
-        scalar: Number to multiply each element by
+        scalar: Scalar value to multiply
         
     Returns:
         New matrix with all elements multiplied by scalar
@@ -132,27 +129,26 @@ def cube(n):
 
 # Example usage
 if __name__ == "__main__":
-    print("=== Advanced Multiplication Operations ===\n")
+    print("Advanced Multiplication Operations Demo")
+    print("=" * 40)
     
     # Multiply multiple numbers
-    print(f"multiply_multiple(2, 3, 4, 5) = {multiply_multiple(2, 3, 4, 5)}")
+    print(f"Multiply 2, 3, 4: {multiply_multiple(2, 3, 4)}")
     
     # Multiply list
-    numbers = [2, 3, 4, 5]
-    print(f"multiply_list({numbers}) = {multiply_list(numbers)}")
+    print(f"Multiply list [2, 3, 4, 5]: {multiply_list([2, 3, 4, 5])}")
     
     # Power
-    print(f"power(2, 8) = {power(2, 8)}")
+    print(f"2 to the power of 8: {power(2, 8)}")
     
     # Factorial
-    print(f"factorial(5) = {factorial(5)}")
+    print(f"Factorial of 6: {factorial(6)}")
     
-    # Square and cube
-    print(f"square(7) = {square(7)}")
-    print(f"cube(4) = {cube(4)}")
+    # Square and Cube
+    print(f"Square of 7: {square(7)}")
+    print(f"Cube of 4: {cube(4)}")
     
     # Matrix scalar multiplication
     matrix = [[1, 2, 3], [4, 5, 6]]
-    scalar = 3
-    print(f"\nOriginal matrix: {matrix}")
-    print(f"Matrix * {scalar} = {multiply_matrix_scalar(matrix, scalar)}")
+    print(f"Matrix {matrix} multiplied by 3:")
+    print(multiply_matrix_scalar(matrix, 3))
